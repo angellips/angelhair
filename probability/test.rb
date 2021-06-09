@@ -1,7 +1,6 @@
 require 'colorize'
 
 #simplify this entire section
-
 def user_input
 
 puts "Please enter quantity of each color"
@@ -22,19 +21,14 @@ puts "Green"
 @user_green = gets.to_i
 
 @user_total = [@user_grey + @user_yellow + @user_blue + @user_red + @user_green]
-
 @user_int = @user_total.inject(0){|sum,x| sum + x }
 
 if @user_int != 5
-  then puts "\nERROR: The inputted quantity must be exactly five. Correct your input and try again. \n ".red
+  then puts "\nERROR: The inputted quantity must be exactly five. Correct your input and try again. \n ".red #uses Colorize gem
   user_input
-  #else overall
+else overall
 end
-
-#.to_i.reduce(0, :+)
-
-#overall
-end
+  end
 
 def overall
 
@@ -60,9 +54,12 @@ puts @overall_perc
 @red_total = 2
 @green_total = 3
 @overall_total = [@grey_total + @yellow_total + @blue_total + @red_total + @green_total]
+@overall_int = @overall_total.inject(0){|sum,x| sum + x }
+
 
 #test output
-puts "#{@overall_total}"
+puts @overall_int
+puts @overall_total
 
 
 prob_input
