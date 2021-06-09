@@ -23,6 +23,7 @@ puts "Green"
 @user_total = [@user_grey + @user_yellow + @user_blue + @user_red + @user_green]
 @user_int = @user_total.inject(0){|sum,x| sum + x }
 
+
 if @user_int != 5
   then puts "\nERROR: The inputted quantity must be exactly five. Correct your input and try again. \n ".red #uses Colorize gem
   user_input
@@ -71,21 +72,11 @@ def prob_input
 
 # 1/64 * 1/63 * 1/62 * 1/61 * 1/60 = probability of set
 
-
-@grey_input = 1
-@yellow_input = 1
-@blue_input = 1
-@red_input = 1
-@green_input = 1
-
-@overall_input = [@grey_input + @yellow_input + @blue_input + @red_input + @green_input]
-
-@overall_int = @overall_input.inject(0){|sum,x| sum + x }
+#divide user color input by five and multiply by var_perc in order to determine probability of receiving that number of the color {??????} I think this works.
 
 
 
-
-@input_prob = @blue_input.to_r / @overall_int.to_r
+@input_prob = @user_blue.to_r / @user_int.to_r
 
 puts @input_prob
 
