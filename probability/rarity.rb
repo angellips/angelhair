@@ -1,4 +1,5 @@
 require 'colorize'
+require 'standard_deviation'
 #version 0.1 -> user script for checking/assigning rarity to a received album release
 
 
@@ -6,21 +7,21 @@ require 'colorize'
 
 def user_input
 
-puts "Please enter quantity of each color"
+puts "\nPlease enter quantity of each color:".green #uses Colorize gem
 
-puts "Grey"
+puts "\nGrey:"
 @user_grey = gets.to_i
 
-puts "Yellow"
+puts "\nYellow:"
 @user_yellow = gets.to_i
 
-puts "Blue"
+puts "\nBlue:"
 @user_blue = gets.to_i
 
-puts "Red"
+puts "\nRed:"
 @user_red = gets.to_i
 
-puts "Green"
+puts "\nGreen:"
 @user_green = gets.to_i
 
 
@@ -74,9 +75,9 @@ overall
 
 def overall
 
-  # total percent for each: grey, yellow, blue, red, green.
-  # presuming there are 40 total tapes which would span eight releases
-  # independent probability that a run contains a certain color
+# total percent for each: grey, yellow, blue, red, green.
+# presuming there are 40 total tapes which would span eight releases
+# independent probability that a run contains a certain color
 
   @overall_full_perc = [(26.0/40.0)*100, (4.0/40.0)*100, (1.0/40.0)*100, (2.0/40.0)*100, (3.0/40.0)*100]
   @overall_perc = [(26.0/40.0), (4.0/40.0), (1.0/40.0), (2.0/40.0), (3.0/40.0)]
@@ -88,7 +89,7 @@ def overall
   @green_perc = @overall_perc[4]
 
 
-  #total number of each color
+#total number of each color
 
   @grey_total = 26
   @yellow_total = 4
@@ -111,7 +112,7 @@ def prob_input
   @rarity_run = @rarity_set * 1/35.to_r
 
   prng = Random.new
-  @rarity_rand = @rarity_run * prng.rand(333)
+  @rarity_rand = @rarity_run * prng.rand(33)
 
 user_input_unit
 
@@ -141,8 +142,30 @@ def user_input_unit
     user_input_unit
   end
 
-#call unit_rarity
+unit_rarity
 
     end
+
+
+#determination of rarity for the individual unit
+
+def unit_rarity
+
+    @unit_dev = (@unit_var / @rarity_run)
+
+    #most common, least common rarity_run; determination of rarity stat
+
+    @common_std = [0.0010549450549450549, 7.032967032967034].stdev
+    @rarity_dev = [@unit_dev, @common_std].stdev.truncate(2)
+    @rarity_rand_dev = [@rarity_rand, @rarity_dev].stdev.truncate(2)
+
+    puts "\nYour rarity score is #{@rarity_dev}. Congrats!".yellow
+    puts "\nYour random rarity score is #{@rarity_rand_dev}. Congrats!".yellow
+
+
+    #add in calculations for tranche vs. tranche rarity after the first release tranche has been completed and new stock sourced
+
+end
+
 
 user_input

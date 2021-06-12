@@ -1,4 +1,5 @@
 require 'colorize'
+require 'standard_deviation'
 #absolute mess of a testing ground for everything related to -> rarity.rb
 
 
@@ -273,6 +274,7 @@ end
 
 puts @unit_var
 
+unit_rarity
 
 end
 
@@ -280,14 +282,36 @@ end
 def unit_rarity
 
   #use this section to query the color unit and then run that against rarity_run.to_f ->>> "if input == grey then var = grey_perc ... then var / rarity_run.to_f
-  #then compare that output relative to a standard deviation from the most common release_run (five grey)
+  #then compare that output relative to a standard deviation from the most common release_run, least common release run
   #then assign a rarity_char i.e., "common", "rare", "super rare" "special" or whatever
 
+  #could write a sequence that runs every possibility of the set and pass each result to an array which I could then run a stdev on
 
 
+@unit_dev = (@unit_var / @rarity_run)
+
+#math for second comment of Def; write code for determining value of most/least common then common_std = [most common, least common].standard_dev
+#then rarity_dev = [@unit_std, common_std].stdev
+#then multiple instacnes of something like, array would be ideal: if @rarity_dev >= 20%, 30%, etc. puts "your unit rarity quality is 54%"
+
+
+#most common, least common rarity_run
+
+@common_std = [0.0010549450549450549, 7.032967032967034].stdev
+@rarity_dev = [@unit_dev, @common_std].stdev
+
+puts "Your rarity score is #{@rarity_dev}. Congrats!".yellow
+
+
+
+#determine rarity by percentage away from @unit_dev
+
+
+
+#add in calculations for tranche vs. tranche rarity after the first release tranche has been completed and new stock sourced
 
 end
 
-user_input_unit
+prob_input
 
 #TESTING
