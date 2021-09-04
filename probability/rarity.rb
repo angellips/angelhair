@@ -4,10 +4,11 @@ require 'standard_deviation'
 
 
 #requests user input regarding the color traits of the release run
+#use of "to_i" renders a blank input as "0"
 
 def user_input
 
-puts "\nPlease enter quantity of each color:".green #uses Colorize gem
+puts "\nPlease enter the quantity of each color:".green #uses Colorize gem
 
 puts "\nGrey:"
 @user_grey = gets.to_i
@@ -76,7 +77,7 @@ overall
 def overall
 
 # total percent for each: grey, yellow, blue, red, green.
-# presuming there are 40 total tapes which would span eight releases
+# presuming there are 40 total units which would span eight releases in the tranche
 # independent probability that a run contains a certain color
 
   @overall_full_perc = [(26.0/40.0)*100, (4.0/40.0)*100, (1.0/40.0)*100, (2.0/40.0)*100, (3.0/40.0)*100]
@@ -89,7 +90,7 @@ def overall
   @green_perc = @overall_perc[4]
 
 
-#total number of each color
+#total number of each color in the release tranche
 
   @grey_total = 26
   @yellow_total = 4
@@ -123,7 +124,7 @@ user_input_unit
 
 def user_input_unit
 
-  puts "\nPlease enter the color of your album copy:".green #uses Colorize gem
+  puts "\nPlease enter the color of the album copy:".green #uses Colorize gem
 
   @unit_color = gets.chomp.downcase.gsub(/\s+/, "")
 
