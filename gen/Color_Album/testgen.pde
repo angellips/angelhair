@@ -1,0 +1,11 @@
+size(1400,1400);
+noStroke();
+fill(random(255), 0, 240);
+rect(0, 0, 700, 700);
+fill(240, random(255), 0);
+rect(700, 0, 700, 700);
+fill(240, 0, random(255));
+rect(0, 700, 700, 700);
+fill(random(255), 240, 0);
+rect(700, 700, 700, 700);
+saveFrame("image-#####.jpg");
