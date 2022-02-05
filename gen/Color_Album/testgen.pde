@@ -1,11 +1,25 @@
+//set image resolution
+
 size(1400,1400);
+
+//remove borders on rect
+
 noStroke();
-fill(random(255), 0, 240);
+
+//generate rects
+
+fill(random(246, 255), random(161, 255), random(161, 255));
 rect(0, 0, 700, 700);
-fill(240, random(255), 0);
+
+fill(random(161, 255), random(246, 255), random(161, 255));
 rect(700, 0, 700, 700);
-fill(240, 0, random(255));
+
+fill(random(161, 255), random(161, 255), random(246, 255));
 rect(0, 700, 700, 700);
-fill(random(255), 240, 0);
+
+fill(random(246, 255), random(161, 255), random(161, 255));
 rect(700, 700, 700, 700);
+
+//export image
+
 saveFrame("image-#####.jpg");
