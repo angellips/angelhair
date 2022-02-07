@@ -31,10 +31,10 @@ for (int gLoop = 0; gLoop < 5; gLoop++) {
   {
 
     rRect = new FloatList();
-    rRect.append(random(618, 700));
-    rRect.append(random(0, 1100));
-    rRect.append(random(0, 925));
-    rRect.append(random(0, 97));
+    rRect.append(random(18, 700));
+    rRect.append(random(0, 110));
+    rRect.append(random(0, 80));
+    rRect.append(random(78, 97));
     rRect.shuffle();
     println(rRect);
   }
@@ -43,9 +43,9 @@ for (int gLoop = 0; gLoop < 5; gLoop++) {
   {
 
     cRect = new FloatList();
-    cRect.append(random(225, 1400));
-    cRect.append(random(0, 300));
-    cRect.append(random(0, 478));
+    cRect.append(random(0, 317));
+    cRect.append(random(0, 224));
+    cRect.append(random(0, 337));
     cRect.shuffle();
     println(cRect);
   }
@@ -85,45 +85,48 @@ for (int gLoop = 0; gLoop < 5; gLoop++) {
 
   float[] rOpac = {random(1, 235), random(75, 100)};
 
-  //generate four rects
-
-  fill(a, c, b, rOpac[1]);
-  rect(l, m, n, o);
-
-  fill(b, a, c, rOpac[1]);
-  rect(m, o, l, n);
-
-  fill(c, a, b, rOpac[1]);
-  rect(n, l, o, m);
-
-  fill(b, c, a, rOpac[1]);
-  rect(o, n, m, l);
-
   //chaotically generate a randomized number of rects
 
-  for (int d = 0; d < random(30, 420); d++) {
+  for (int d = 0; d < random(113, 420); d++) {
 
-    fill(a, c, b, rOpac[0]);
-    rect(u, v, w, u);
+    fill(a, c, b, rOpac[1]);
+    rect(random(0, 1400), random(0, 1400), w, u);
   }
 
-  for (int e = 0; e < random(55, 255); e++) {
+  for (int e = 0; e < random(115, 400); e++) {
 
-    fill(b, a, c, rOpac[0]);
-    rect(v, u, v, w);
+    fill(b, a, c, rOpac[1]);
+    rect(random(0, 1400), random(0, 1400), v, w);
   }
 
-  for (int f = 0; f < random(1, 534); f++) {
+  for (int f = 0; f < random(42, 83); f++) {
 
-    fill(c, a, b, rOpac[0]);
-    rect(w, w, u, v);
+    fill(c, a, b, rOpac[1]);
+    rect(random(0, 1400), random(0, 1400), u, v);
   }
 
-  for (int g = 0; g < random(90, 900); g++) {
+  for (int g = 0; g < random(52, 90); g++) {
 
-    fill(b, c, a, rOpac[0]);
-    rect(u, u, w, v);
+    fill(b, c, a, rOpac[1]);
+    rect(random(0, 1400), random(0, 1400), w, v);
   }
+
+  //generate four rects
+
+  fill(a, c, b, rOpac[0]);
+  rect(l, m, n, o);
+
+  fill(b, a, c, rOpac[0]);
+  rect(m, o, l, n);
+
+  fill(c, a, b, rOpac[0]);
+  rect(n, l, o, m);
+
+  fill(b, c, a, rOpac[0]);
+  rect(o, n, m, l);
+
+
+
 
   //combine rPastel and bMode values to create filename
 
