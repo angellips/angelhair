@@ -1,4 +1,4 @@
-// AL: generative-pastel-0.2a
+// AL: rect-gen0.1
 // randomizes blendMode, R-G-B_blendMode for filename, loops as many times as designated.
 
 
