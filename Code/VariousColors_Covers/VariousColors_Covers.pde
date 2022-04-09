@@ -24,13 +24,14 @@ for (int rectHLoop = 0; rectHLoop < 3; rectHLoop++) {
   rect(random(0, 3000), random(0, 3000), random(0, 1200), random(2, 300)); //big horizontal rect w/ no fill
 }
 
-
-for (int circLoop = 0; circLoop < random(1,9); circLoop++) {
-
   noStroke();
+  
   fill(random(0, 255), random(0, 255), random(0, 255));
-  circle(random(0, 3000), random(0, 3000), 23);
-}
+  circle(2977, 2977, 23);
+  
+  fill(random(0, 255), random(0, 255), random(0, 255));
+  circle(2954, 2954, 23);
+
 
 String filename = str(a)+".jpg";
 saveFrame(filename);

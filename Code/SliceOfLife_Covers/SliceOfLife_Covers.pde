@@ -28,7 +28,7 @@ for (int circLoop = 0; circLoop < random(1,9); circLoop++) {
 
 noStroke();
 fill(random(0, 60), random(0, 60), 255);
-circle(random(0, 3000), random(0, 3000), 23);
+circle(2977, 2977, 23);
 
 }
 

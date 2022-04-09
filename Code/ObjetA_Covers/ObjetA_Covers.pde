@@ -26,7 +26,7 @@ for (int rectHLoop = 0; rectHLoop < 8; rectHLoop++) {
 
 noStroke();
 fill(255, 0, 0);
-circle(random(0, 3000), random(0, 3000), 77);
+circle(2977, 2977, 23);
 
 String filename = str(a)+".jpg";
 saveFrame(filename);
